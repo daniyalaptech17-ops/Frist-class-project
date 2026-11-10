@@ -1,0 +1,370 @@
+
+/* =========================
+   1. GLOBAL STYLING
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --gold: #d4af66;
+    --gold-light: #f5d995;
+    --black: #080808;
+    --dark: #111111;
+    --white: #ffffff;
+    --gray: #aaaaaa;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================
+   2. NAVBAR
+========================= */
+
+header {
+    height: 80px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(10, 10, 10, 0.95);
+    border-bottom: 1px solid #302719;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+/* Mobile Menu */
+
+.menu {
+    display: none;
+    background: none;
+    color: var(--gold);
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* =========================
+   3. HERO SECTION
+========================= */
+
+.hero {
+    min-height: 90vh;
+    padding: 100px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            #4d381b55,
+            transparent 35%
+        );
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.gold {
+    color: var(--gold);
+    letter-spacing: 3px;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(45px, 6vw, 75px);
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+h1 span,
+h2 span {
+    color: var(--gold);
+}
+
+.hero-content > p:not(.gold) {
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+/* =========================
+   4. BUTTON
+========================= */
+
+.btn {
+    display: inline-block;
+    padding: 15px 28px;
+    background: var(--gold);
+    color: #090909;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    border: 1px solid var(--gold);
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--gold);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px #d4af6633;
+}
+
+/* =========================
+   5. HERO IMAGE
+========================= */
+
+.hero-image {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: grid;
+    place-items: center;
+}
+
+.circle {
+    width: 210px;
+    height: 210px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 130px;
+    font-family: Georgia, serif;
+    color: var(--gold);
+
+    box-shadow:
+        0 0 30px #d4af6644,
+        0 0 80px #d4af6622;
+}
+
+.orbit {
+    position: absolute;
+    width: 290px;
+    height: 290px;
+    border: 1px dashed #d4af6680;
+    border-radius: 50%;
+    animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =========================
+   6. GENERAL SECTIONS
+========================= */
+
+.section {
+    padding: 100px 10%;
+    border-top: 1px solid #222;
+}
+
+h2 {
+    font-size: 45px;
+    margin-bottom: 30px;
+}
+
+.description {
+    max-width: 700px;
+    color: var(--gray);
+    line-height: 2;
+    font-size: 16px;
+}
+
+/* =========================
+   7. SKILLS & PROJECT CARDS
+========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    padding: 30px;
+    background: linear-gradient(145deg, #171717, #0b0b0b);
+    border: 1px solid #302719;
+    transition: 0.35s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+    box-shadow: 0 15px 40px #d4af6615;
+}
+
+.card h3 {
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.card p,
+.card span {
+    color: var(--gray);
+    line-height: 1.8;
+    font-size: 13px;
+}
+
+.project {
+    min-height: 210px;
+}
+
+/* =========================
+   8. CONTACT SECTION
+========================= */
+
+.contact {
+    text-align: center;
+    background: #100e0a;
+}
+
+.contact p:not(.gold) {
+    color: var(--gray);
+    margin-bottom: 30px;
+}
+
+/* =========================
+   9. FOOTER
+========================= */
+
+footer {
+    padding: 30px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #302719;
+}
+
+footer p {
+    color: #888;
+    font-size: 12px;
+}
+
+/* =========================
+   10. RESPONSIVE DESIGN
+========================= */
+
+@media(max-width: 768px) {
+
+    header {
+        padding: 0 6%;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: #101010;
+        padding: 25px;
+        flex-direction: column;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 80px;
+    }
+
+    .hero-image {
+        margin-top: 30px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 75px 7%;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* =========================
+   11. SMALL MOBILE DEVICES
+========================= */
+
+@media(max-width: 450px) {
+
+    h1 {
+        font-size: 43px;
+    }
+
+    h2 {
+        font-size: 35px;
+    }
+
+    .hero-image {
+        transform: scale(0.85);
+    }
+
+    .card {
+        padding: 23px;
+    }
+}
